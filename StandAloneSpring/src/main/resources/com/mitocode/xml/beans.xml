@@ -8,20 +8,18 @@
 	</bean>
 	
 	<bean id="persona" class="com.mitocode.beans.Persona">
-		<property name="pais" ref="country"></property>
+		<property name="pais">
+		<bean id="country" class="com.mitocode.beans.Pais">
+			<property name="pais" value="Mexico"></property>
+			<property name="ciudad">
+				<bean id="ciu" class="com.mitocode.beans.Ciudad">
+					<property name="nombre" value="toluca"></property>
+				</bean>
+			</property>
+		</bean>
+		</property>
 		<property name="id" value="1"></property>
 		<property name="name" value="Viri"></property>
 		<property name="apodo" value="mo"></property>
 	</bean>
-	
-	<bean id="country" class="com.mitocode.beans.Pais">
-		<property name="pais" value="Mexico"></property>
-		<property name="ciudad" ref="ciu"></property>
-	</bean>
-	
-	<bean id="ciu" class="com.mitocode.beans.Ciudad">
-		<property name="nombre" value="toluca"></property>
-	</bean>
-	
-
 </beans>
