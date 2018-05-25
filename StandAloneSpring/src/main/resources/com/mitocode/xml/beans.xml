@@ -7,36 +7,26 @@
 		<property name="saludo" value="Hola desde spring mojarrito!"></property>
 	</bean>
 
-	<bean id="persona" class="com.mitocode.beans.Persona" name="personaBean2">
-		<property name="pais" ref="country"></property>
+	<!-- En el byName deben coinicidir el name como el nombre del objeto -->
+	<!-- <bean id="persona" class="com.mitocode.beans.Persona" autowire="byName"> 
+		<property name="id" value="1"></property> <property name="name" value="Viri"></property> 
+		<property name="apodo" value="mo"></property> </bean> -->
+
+	<!-- En el byType busca por tipo pero si tenemos 2 beans con el mismo tipo 
+		genera error -->
+	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byType">
 		<property name="id" value="1"></property>
 		<property name="name" value="Viri"></property>
 		<property name="apodo" value="mo"></property>
 	</bean>
 
-	<bean id="country" class="com.mitocode.beans.Pais">
+	
+	<bean id="pais" class="com.mitocode.beans.Pais">
 		<property name="pais" value="Mexico"></property>
-		<property name="ciudades">
-			<list>
-				<ref bean="ciudad1"/>
-				<ref bean="ciudad2"/>
-				<ref bean="ciudad3"/>
-			</list>
-		</property>
 	</bean>
 
-	<bean id="ciudad1" class="com.mitocode.beans.Ciudad">
+	<bean id="ciudad" class="com.mitocode.beans.Ciudad">
 		<property name="nombre" value="toluca"></property>
 	</bean>
-	
-	<bean id="ciudad2" class="com.mitocode.beans.Ciudad">
-		<property name="nombre" value="gdl"></property>
-	</bean>
-	
-	<bean id="ciudad3" class="com.mitocode.beans.Ciudad">
-		<property name="nombre" value="otra"></property>
-	</bean>
-
-	<alias name="persona" alias="personaBean" />
 
 </beans>

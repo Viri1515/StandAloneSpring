@@ -6,9 +6,16 @@ public class Persona {
 	private String name;
 	private String 	apodo;
 	private Pais pais;
+	private Ciudad ciudad;
 	
 	public int getId() {
 		return id;
+	}
+	public Ciudad getCiudad() {
+		return ciudad;
+	}
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudad = ciudad;
 	}
 	public void setId(int id) {
 		this.id = id;
