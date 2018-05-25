@@ -3,8 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Con singleton siempre apunta al mismo objeto es decir misma referencia con prototype se crea un objeto diferente por ende una instancia diferente -->
-	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName" scope="singleton">
+	<!-- la propiedad lazy no carga inicialmente el bean sino que lo genera hasta que se hace un getBean y solo aplica en el scope singletons -->
+	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName" scope="singleton" lazy-init="true">
 		<property name="id" value="1"></property>
 		<property name="name" value="Viri"></property>
 		<property name="apodo" value="mo"></property>
