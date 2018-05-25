@@ -6,23 +6,37 @@
 	<bean id="mundo" class="com.mitocode.beans.Mundo">
 		<property name="saludo" value="Hola desde spring mojarrito!"></property>
 	</bean>
-	
+
 	<bean id="persona" class="com.mitocode.beans.Persona" name="personaBean2">
 		<property name="pais" ref="country"></property>
 		<property name="id" value="1"></property>
 		<property name="name" value="Viri"></property>
 		<property name="apodo" value="mo"></property>
 	</bean>
-	
+
 	<bean id="country" class="com.mitocode.beans.Pais">
 		<property name="pais" value="Mexico"></property>
-		<property name="ciudad" ref="ciu"></property>
+		<property name="ciudades">
+			<list>
+				<ref bean="ciudad1"/>
+				<ref bean="ciudad2"/>
+				<ref bean="ciudad3"/>
+			</list>
+		</property>
 	</bean>
-	
-	<bean id="ciu" class="com.mitocode.beans.Ciudad">
+
+	<bean id="ciudad1" class="com.mitocode.beans.Ciudad">
 		<property name="nombre" value="toluca"></property>
 	</bean>
 	
-	<alias name="persona" alias="personaBean"/>
+	<bean id="ciudad2" class="com.mitocode.beans.Ciudad">
+		<property name="nombre" value="gdl"></property>
+	</bean>
+	
+	<bean id="ciudad3" class="com.mitocode.beans.Ciudad">
+		<property name="nombre" value="otra"></property>
+	</bean>
+
+	<alias name="persona" alias="personaBean" />
 
 </beans>
