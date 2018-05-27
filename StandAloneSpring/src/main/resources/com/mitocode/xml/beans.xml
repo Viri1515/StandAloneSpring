@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="init"
-	default-destroy-method="destroy">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-     
-	<!-- estos se configuran en cada bean init-method="init" destroy-method="destroy" pero se pueden sustituir en el encabezado -->
-	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName" >
+	<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">
+	</bean>
+
+	<!-- estos se configuran en cada bean init-method="init" destroy-method="destroy" 
+		pero se pueden sustituir en el encabezado -->
+	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName">
 		<property name="apodo" value="mo"></property>
 	</bean>
-	
+
 	<bean id="pais" class="com.mitocode.beans.Pais">
 		<property name="pais" value="Mexico"></property>
 	</bean>
