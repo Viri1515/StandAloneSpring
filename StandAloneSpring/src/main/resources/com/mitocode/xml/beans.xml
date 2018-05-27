@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init"
+	default-destroy-method="destroy">
 
-	<!-- la propiedad lazy no carga inicialmente el bean sino que lo genera hasta que se hace un getBean y solo aplica en el scope singletons -->
-	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName" scope="singleton" lazy-init="true">
-		<property name="id" value="1"></property>
-		<property name="name" value="Viri"></property>
+     
+	<!-- estos se configuran en cada bean init-method="init" destroy-method="destroy" pero se pueden sustituir en el encabezado -->
+	<bean id="persona" class="com.mitocode.beans.Persona" autowire="byName" >
 		<property name="apodo" value="mo"></property>
 	</bean>
 	
